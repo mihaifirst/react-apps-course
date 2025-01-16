@@ -26,8 +26,28 @@ function Form() {
   );
 }
 
+function Item({ item }) {
+  return (
+    <li>
+      <span>
+        {" "}
+        {item.quantity}
+        {item.description}
+      </span>
+    </li>
+  );
+}
+
 function PackingList() {
-  return <div className="list">List</div>;
+  return (
+    <div className="list">
+      <ul>
+        {initialItems.map((item) => (
+          <Item item={item} />
+        ))}
+      </ul>
+    </div>
+  );
 }
 
 function Stats() {
