@@ -27,6 +27,16 @@ function Form() {
 
   const handleSumbit = (e) => {
     e.preventDefault();
+
+    const newItem = { description, quantity, packed: false, id: Date.now() };
+
+    if (!description) {
+      return;
+    }
+    console.log(newItem);
+
+    setDescription("");
+    setQuantity(1);
   };
 
   const handleChangeInputDescription = (e) => {
