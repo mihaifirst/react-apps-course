@@ -24,6 +24,11 @@ function Logo() {
 function Form() {
   const [description, setDescription] = useState("");
   const [quantity, setQuantity] = useState(1);
+  const [items, setItems] = useState([]);
+
+  const handleAddItems(item) {
+    setItems((items)=> [...items, item])
+  }
 
   const handleSumbit = (e) => {
     e.preventDefault();
