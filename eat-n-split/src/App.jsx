@@ -40,13 +40,14 @@ export default function App() {
 
   const handleAddFriend = (friend) => {
     setFriends((friends) => [...friends, friend]);
+    setShowAddFriend(false);
   };
 
   return (
     <>
       <div className="app">
         <div className="sidebar">
-          <FirendList friends={friends} />
+          <FriendList friends={friends} />
           {showAddFriend && <FormAddFriend onAddFriend={handleAddFriend} />}
           <Button onClick={handleShowAddFriend}>
             {showAddFriend ? "Close" : "Add Friend"}
@@ -59,7 +60,7 @@ export default function App() {
   );
 }
 
-function FirendList({ friends }) {
+function FriendList({ friends }) {
   return (
     <ul>
       {friends.map((friend) => (
@@ -117,7 +118,7 @@ function FormAddFriend({ onAddFriend }) {
     const newFriend = {
       id,
       name,
-      image: `${image}?=${id}`,
+      image: `${image}?u=${id}`,
       balance: 0,
     };
 
